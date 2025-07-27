@@ -1,7 +1,6 @@
+"use client";
 import React, { useEffect, useState } from 'react';
 import { fetchTopArtists, fetchTopSongs, fetchTopGenres } from '../lib/spotifyApi';
-
-"use client";
 
 function SpotifyStats() {
     const [topArtists, setTopArtists] = useState([]);
