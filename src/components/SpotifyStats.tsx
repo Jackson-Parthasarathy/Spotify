@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { fetchTopArtists, fetchTopSongs, fetchTopGenres } from '../lib/spotifyApi';
 
-const SpotifyStats = () => {
+"use client";
+
+function SpotifyStats() {
     const [topArtists, setTopArtists] = useState([]);
     const [topSongs, setTopSongs] = useState([]);
     const [topGenres, setTopGenres] = useState([]);
@@ -14,7 +16,7 @@ const SpotifyStats = () => {
                 const artists = await fetchTopArtists(timeFrame);
                 const songs = await fetchTopSongs(timeFrame);
                 const genres = await fetchTopGenres(timeFrame);
-                
+
                 setTopArtists(artists);
                 setTopSongs(songs);
                 setTopGenres(genres);
@@ -65,6 +67,6 @@ const SpotifyStats = () => {
             </div>
         </div>
     );
-};
+}
 
 export default SpotifyStats;
